@@ -2,40 +2,40 @@ import React from 'react'
 
 const Weather = ({weatherInfo}) => {
   return (
-<section>
+<section className='text-center'>
       <h2>{weatherInfo?.name}</h2>
 
       <section>
         {/* sección superior */}
-        <section>
-          <h4>{weatherInfo?.[0].description}</h4>
-          <span>{weatherInfo?.main.temp}</span>
+        <section className='bg-white/60 p-2 rounded-2xl'>
+          <h4>{weatherInfo?.weather[0].description}</h4>
+          <span>{weatherInfo?.main.temp}°K</span>
           <div>
-            <img src='' alt='' />
+            <img src={`https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@4x.png`} alt='' />
           </div>
         </section>
 
         {/* sección inferior */}
-        <section>
+        <section className='bg-white/60 p-2 rounded-2xl'>
           <article>
             <div>
-              <img src='' alt='' />
+              <img src='/images/wind.png' alt='' />
             </div>
-            <span>wind</span>
+            <span>{weatherInfo?.wind.speed}m/s</span>
           </article>
 
           <article>
             <div>
-              <img src='' alt='' />
+              <img src='/images/humidity.png' alt='' />
             </div>
-            <span>Humidity</span>
+            <span>{weatherInfo?.main.humidity}%</span>
           </article>
 
           <article>
             <div>
-              <img src='' alt='' />
+              <img src='/images/pressure.png' alt='' />
             </div>
-            <span>pressure</span>
+            <span>{weatherInfo?.main.pressure}hPa</span>
           </article>
         </section>
       </section>
