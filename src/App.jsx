@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import Weather from './assets/components/Weather';
+import SearchCity from './assets/components/SearchCity';
 
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null);
@@ -12,7 +13,9 @@ function App() {
     const API_KEY = "91f5efab15752b1ca9cea3aa8f629444"
 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
-    
+
+    // const url2 = `https://api.openweathermap.org/data/2.5/weather?q="${city}"&appid=${API_KEY}`
+
     axios.get(url)
     .then(({data}) => setWeatherInfo(data))
     .catch((err) => console.log(err))
@@ -23,7 +26,8 @@ function App() {
   }, [])
 
   return (
-    <main className='min-h-screen text-black font-lato flex justify-center items-center px-4'>
+    <main className='min-h-screen text-black font-lato flex flex-col justify-center items-center px-4'>
+      {/* <SearchCity weatherInfo={weatherInfo}/> */}
       <Weather weatherInfo={weatherInfo}/>
     </main>
   )
