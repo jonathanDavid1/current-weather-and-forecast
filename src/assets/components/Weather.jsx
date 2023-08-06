@@ -13,6 +13,8 @@ const Weather = ({weatherInfo}) => {
      setIsCelsius(!isCelsius)
   }
   const resultTempConvertion = isCelsius ? kelvinToCelsius(weatherInfo?.main.temp) : kelvinToFahrenheit(weatherInfo?.main.temp)
+
+  console.log(weatherInfo?.weather[0])
   
 
   return (
@@ -22,6 +24,7 @@ const Weather = ({weatherInfo}) => {
       <section className='grid gap-4 sm:grid-cols-[auto_auto]'>
         {/* sección superior */}
         <section className='bg-white/60 p-2 rounded-2xl grid grid-cols-2 items-center'>
+
           <h4 className='col-span-2 mt-5 text-xl'>{weatherInfo?.weather[0].description}</h4>
           <span className='text-5xl'>{resultTempConvertion}°{isCelsius ? "C": "F"}</span>
           <div>

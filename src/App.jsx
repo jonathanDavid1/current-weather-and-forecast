@@ -23,7 +23,7 @@ function App() {
   }, [])
 
   return (
-    <main className='bg-[#2f2958] min-h-screen text-white font-lato flex justify-center items-center px-4'>
+    <main className='min-h-screen text-black font-lato flex justify-center items-center px-4'>
       <Weather weatherInfo={weatherInfo}/>
     </main>
   )
