@@ -1,11 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const SearchCity = ({ weatherInfo }) => {
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        const city = event.target.city.value
-        console.log(city)
-      }
+const SearchCity = ({ handleSubmit}) => {
 
   return (
     <form className='mb-3' onSubmit={handleSubmit}>
@@ -13,9 +8,9 @@ const SearchCity = ({ weatherInfo }) => {
         id="city"
         type="text"
         placeholder="Search a city"
-        className="text-black p-2"
+        className="text-black p-2 rounded-xl w-auto h-9"
       />
-      <button>Search</button>
+      <button className='bg-slate-50 rounded-xl w-20 h-9' >Search</button>
     </form>
   );
 }

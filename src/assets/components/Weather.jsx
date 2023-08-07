@@ -16,6 +16,8 @@ const Weather = ({ weatherInfo }) => {
     ? kelvinToCelsius(weatherInfo?.main.temp)
     : kelvinToFahrenheit(weatherInfo?.main.temp);
 
+
+
   return (
     <section className="text-center">
       <h2 className="mb-10 text-3xl">{weatherInfo?.name}</h2>
