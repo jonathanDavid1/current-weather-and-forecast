@@ -58,7 +58,7 @@ function App() {
     
   };
   const image = weatherInfo?.weather[0].icon
-  console.log(image)
+  console.log(weatherInfo?.weather[0].icon)
   return (
     <main 
     className={`bg-blue-600 min-h-screen text-black font-lato flex flex-col justify-center items-center px-4 ${backGroundImages[image]}`}>
